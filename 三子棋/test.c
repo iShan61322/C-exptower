@@ -1,7 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+//æ¸¸æˆçš„æµ‹è¯•
+
 #include "game.h"
-//ÓÃÓÚ²âÊÔÓÎÏ·Âß¼­
-//Ö÷º¯Êı
+//ç”¨äºæµ‹è¯•æ¸¸æˆé€»è¾‘
+//ä¸»å‡½æ•°
 void menu()
 {
 	printf("-------Little Rat Game!----------\n");
@@ -13,25 +15,25 @@ void menu()
 }
 void game()
 {
-	//´æ´¢Êı¾İ¡ª¡ªÆåÅÌÎªÒ»¸ö¶şÎ¬Êı×é
+	//å­˜å‚¨æ•°æ®â€”â€”æ£‹ç›˜ä¸ºä¸€ä¸ªäºŒç»´æ•°ç»„
 	char board[ROW][COL];
-	//³õÊ¼»¯ÆåÅÌ
+	//åˆå§‹åŒ–æ£‹ç›˜
 	InitBoard(board, ROW, COL);
-	//´òÓ¡ÆåÅÌ
+	//æ‰“å°æ£‹ç›˜
 	DisplayBoard(board, ROW, COL);
 
-	char ret = 0;//½ÓÊÜÓÎÏ·×´Ì¬
-	//Íæ¼ÒºÍµçÄÔ²©ŞÄ
+	char ret = 0;//æ¥å—æ¸¸æˆçŠ¶æ€
+	//ç©å®¶å’Œç”µè„‘åšå¼ˆ
 	while (1)
 	{
-		//Íæ¼ÒÏÂÆå
+		//ç©å®¶ä¸‹æ£‹
 		MousePlay(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		ret = IfWin(board, ROW, COL);
 		if (ret != 'C')
 			break;
 
-		//µçÄÔÏÂÆå
+		//ç”µè„‘ä¸‹æ£‹
 		ComputerPlay(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		ret = IfWin(board, ROW, COL);
@@ -44,7 +46,7 @@ void game()
 	}
 	else if (ret == '#')
 	{
-		printf("Êó¼¸ÊäÄÅ£¬AwardàÅÏ´Äã!");
+		printf("é¼ å‡ è¾“å‘ï¼ŒAwardå—¯æ´—ä½ !");
 	}
 	else
 	{
