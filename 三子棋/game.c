@@ -1,4 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+//æ¸¸æˆå‡½æ•°çš„å®žçŽ°
+
 #include"game.h"
 
 void InitBoard(char board[ROW][COL], int row, int col)
@@ -51,7 +53,7 @@ void MousePlay(char board[ROW][COL], int row, int col)
 	{
 		printf("Rat input(like num1 num2):>");
 		scanf("%d %d", &x, &y);
-		//ÅÐ¶ÏÊäÈëµÄ×ø±êÊÇ·ñ±»Õ¼
+		//åˆ¤æ–­è¾“å…¥çš„åæ ‡æ˜¯å¦è¢«å 
 		if (x >= 1 && x <= row && y >= 1 && y <= col)
 		{
 			if (board[x-1][y-1] == ' ')
@@ -60,21 +62,21 @@ void MousePlay(char board[ROW][COL], int row, int col)
 				break;
 			}
 			else
-				printf("Õâ¸öÎ»ÖÃÓÐÊóºÛ¼£À²£¡£¡");
+				printf("è¿™ä¸ªä½ç½®æœ‰é¼ ç—•è¿¹å•¦ï¼ï¼");
 		}
 		else
 		{
-			printf("²ÁÁÁÊóÑÛ³ôôÎôÎÊº,×ø±ê²»ÔÚ·¶Î§ÄÚ");
+			printf("æ“¦äº®é¼ çœ¼è‡­ç²‘ç²‘å±Ž,åæ ‡ä¸åœ¨èŒƒå›´å†…");
 		}
 	}
 }
 
-//µçÄÔ»ØºÏ
+//ç”µè„‘å›žåˆ
 void ComputerPlay(char board[ROW][COL], int row, int col)
 {
-	printf("ÊóÊÖÍ£ÏÂ£¡ÏÖÔÚÊÇµçÄÔÊó»ØºÏ");
+	printf("é¼ æ‰‹åœä¸‹ï¼çŽ°åœ¨æ˜¯ç”µè„‘é¼ å›žåˆ");
 
-	//µçÄÔËæ»úÈ¡Êý
+	//ç”µè„‘éšæœºå–æ•°
 	while (1)
 	{
 		int x = rand() % row;
@@ -88,7 +90,7 @@ void ComputerPlay(char board[ROW][COL], int row, int col)
 	}
 }
 
-//ÅÐ¶ÏÆåÅÌÊÇ·ñÏÂÂú
+//åˆ¤æ–­æ£‹ç›˜æ˜¯å¦ä¸‹æ»¡
 int IfFull(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
@@ -99,18 +101,18 @@ int IfFull(char board[ROW][COL], int row, int col)
 		{
 			if (board[i][j] == ' ')
 			{
-				return 0;//ÆåÅÌÎ´Âú
+				return 0;//æ£‹ç›˜æœªæ»¡
 			}
 		}
 	}
-				return 1;//ÆåÅÌÂúÁË
+				return 1;//æ£‹ç›˜æ»¡äº†
 }
 
-//ÅÐ¶ÏÊäÓ®
+//åˆ¤æ–­è¾“èµ¢
 char IfWin(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
-	//ÅÐ¶ÏÈýÐÐ
+	//åˆ¤æ–­ä¸‰è¡Œ
 	for (i = 0; i < row; i++)
 	{
 		if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][1] != ' ')
@@ -119,7 +121,7 @@ char IfWin(char board[ROW][COL], int row, int col)
 		}
 	}
 
-	//ÅÐ¶ÏÈýÁÐ
+	//åˆ¤æ–­ä¸‰åˆ—
 	for (i = 0; i < col; i++)
 	{
 		if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[1][i] != ' ')
@@ -128,7 +130,7 @@ char IfWin(char board[ROW][COL], int row, int col)
 		}
 	}
 
-	//ÅÐ¶Ï¶Ô½ÇÏß
+	//åˆ¤æ–­å¯¹è§’çº¿
 	for (i = 0; i < col; i++)
 	{
 		if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
@@ -140,7 +142,7 @@ char IfWin(char board[ROW][COL], int row, int col)
 			return board[1][1];
 		}
 	}
-	//ÅÐ¶ÏÆ½¾Ö
+	//åˆ¤æ–­å¹³å±€
 	int ret = IfFull(board, row, col);
 	if (ret == 1)
 	{
