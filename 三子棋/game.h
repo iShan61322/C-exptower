@@ -1,29 +1,30 @@
 #pragma once
+//æ¸¸æˆå‡½æ•°çš„å£°æ˜
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
-//ºê¶¨ÒåÆåÅÌ´óĞ¡
+//å®å®šä¹‰æ£‹ç›˜å¤§å°
 #define ROW 3
 #define COL 3
 
-//º¯ÊıµÄÉùÃ÷
+//å‡½æ•°çš„å£°æ˜
 
-//³õÊ¼»¯ÆåÅÌ
+//åˆå§‹åŒ–æ£‹ç›˜
 void InitBoard(char board[ROW][COL],int row,int col);
-//´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 void DisplayBoard(char board[ROW][COL], int row, int col);
-//Êó»ú²©ŞÄ
-//Êó»ØºÏ
+//é¼ æœºåšå¼ˆ
+//é¼ å›åˆ
 void MousePlay(char board[ROW][COL],int row,int col);
-//µçÄÔ»ØºÏ
+//ç”µè„‘å›åˆ
 void ComputerPlay(char board[ROW][COL], int row, int col);
 
 
-//ÅĞ¶ÏÊäÓ®
-//1.ÊóÓ®¡ª¡ª*
-//2.µçÄÔÓ®¡ª¡ª#
-//3.Æ½¾Ö¡ª¡ªQ
-//4.¼ÌĞøµ±Ç°¶Ô¾Ö¡ª¡ªC
+//åˆ¤æ–­è¾“èµ¢
+//1.é¼ èµ¢â€”â€”*
+//2.ç”µè„‘èµ¢â€”â€”#
+//3.å¹³å±€â€”â€”Q
+//4.ç»§ç»­å½“å‰å¯¹å±€â€”â€”C
 char IfWin(char board[ROW][COL], int row, int col);
